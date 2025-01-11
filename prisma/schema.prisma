@@ -1,0 +1,493 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model BlackCatContacts {
+  id        String                  @id @default(uuid())
+  name      String                  @default("")
+  budget    String                  @default("")
+  company   String                  @default("")
+  createdAt DateTime                @default(now())
+  email     String                  @default("")
+  message   String                  @default("")
+  phone     String                  @default("")
+  status    BlackCatContacts_status @default(NOT_CONTACTED)
+}
+
+model BotTracker {
+  id        String   @id @default(uuid())
+  counter   Int      @default(0)
+  lastname  String   @default("")
+  phone     String   @default("")
+  email     String   @default("")
+  ipaddress String   @unique
+  createdAt DateTime @default(now())
+  firstname String   @default("")
+}
+
+model BotViptourscontacts {
+  id          String                     @id @default(uuid())
+  firstname   String                     @default("")
+  lastname    String                     @default("")
+  email       String                     @default("")
+  phone       String                     @default("")
+  daterange   String                     @default("")
+  message     String                     @default("") @db.VarChar(1000)
+  status      BotViptourscontacts_status @default(NOT_CONTACTED)
+  guide       String                     @default("")
+  icode       String                     @default("")
+  staying     String                     @default("")
+  createdAt   DateTime                   @default(now())
+  ipaddress   String                     @default("")
+  browser     String                     @default("")
+  city        String                     @default("")
+  country     String                     @default("")
+  device      String                     @default("")
+  latitude    String                     @default("")
+  longitude   String                     @default("")
+  os          String                     @default("")
+  region      String                     @default("")
+  zipcode     String                     @default("")
+  devicemodel String                     @default("")
+}
+
+model FerraroForever {
+  id             String                @id @default(uuid())
+  createdAt      DateTime              @default(now())
+  firstname      String                @default("")
+  lastname       String                @default("")
+  guestfirstname String                @default("")
+  guestlastname  String                @default("")
+  email          String                @default("")
+  phone          String                @default("")
+  message        String                @default("") @db.VarChar(1000)
+  attending      String                @default("")
+  status         FerraroForever_status @default(NOT_CONTACTED)
+}
+
+model FerraroForeverNote {
+  id        String   @id @default(uuid())
+  content   String   @db.VarChar(1000)
+  createdAt DateTime @default(now())
+  leadId    String
+
+  @@index([leadId])
+}
+
+model LupoLawnNote {
+  id        String   @id @default(uuid())
+  content   String   @db.VarChar(1000)
+  createdAt DateTime @default(now())
+  leadId    String
+
+  @@index([leadId])
+}
+
+model LupoLawnService {
+  id        String                 @id @default(uuid())
+  createdAt DateTime               @default(now())
+  name      String                 @default("")
+  email     String                 @default("")
+  phone     String                 @default("")
+  message   String                 @default("") @db.VarChar(1000)
+  status    LupoLawnService_status @default(NOT_CONTACTED)
+}
+
+model Note {
+  id        String   @id @default(uuid())
+  content   String   @db.VarChar(1000)
+  createdAt DateTime @default(now())
+  leadId    String
+
+  @@index([leadId])
+}
+
+model Paratec {
+  id        String         @id @default(uuid())
+  createdAt DateTime       @default(now())
+  name      String         @default("")
+  email     String         @default("")
+  phone     String         @default("")
+  message   String         @default("") @db.VarChar(1000)
+  status    Paratec_status @default(NOT_CONTACTED)
+}
+
+model ParatecNote {
+  id        String   @id @default(uuid())
+  content   String   @db.VarChar(1000)
+  createdAt DateTime @default(now())
+  leadId    String
+
+  @@index([leadId])
+}
+
+model Privatevip {
+  id        String            @id @default(uuid())
+  createdAt DateTime          @default(now())
+  email     String            @default("")
+  phone     String            @default("")
+  message   String            @default("") @db.VarChar(1000)
+  status    Privatevip_status @default(NOT_CONTACTED)
+  daterange String            @default("")
+  firstname String            @default("")
+  guide     String            @default("")
+  icode     String            @default("")
+  lastname  String            @default("")
+  staying   String            @default("")
+}
+
+model Privatevipnote {
+  id        String   @id @default(uuid())
+  content   String   @db.VarChar(1000)
+  createdAt DateTime @default(now())
+  leadId    String
+
+  @@index([leadId])
+}
+
+model Viptoursbillingform {
+  id                    String   @id @default(uuid())
+  name                  String   @default("")
+  icode                 String   @default("")
+  phonenumber           String   @default("")
+  icodetwo              String   @default("")
+  homenumber            String   @default("")
+  email                 String   @default("")
+  spamemail             String   @default("")
+  disneypassword        String   @default("")
+  reservationnumber     String   @default("")
+  cardnumber            String   @default("")
+  expdate               String   @default("")
+  cvv                   String   @default("")
+  billingaddress        String   @default("")
+  city                  String   @default("")
+  state                 String   @default("")
+  zipcode               String   @default("")
+  cardname              String   @default("")
+  traveldaterange       String   @default("")
+  transportationparks   String   @default("")
+  transportationairport String   @default("")
+  flightinfo            String   @default("")
+  hotelreservation      String   @default("")
+  wherehotel            String   @default("")
+  partysize             String   @default("")
+  tourdates             String   @default("")
+  parkedrequested       String   @default("")
+  referal               String   @default("")
+  beentodisney          String   @default("")
+  dining                String   @default("")
+  childerndescription   String   @default("")
+  createdAt             DateTime @default(now())
+}
+
+model Viptourscontacts {
+  id          String                  @id @default(uuid())
+  firstname   String                  @default("")
+  lastname    String                  @default("")
+  email       String                  @default("")
+  phone       String                  @default("")
+  daterange   String                  @default("")
+  message     String                  @default("") @db.VarChar(1000)
+  status      Viptourscontacts_status @default(NOT_CONTACTED)
+  guide       String                  @default("")
+  icode       String                  @default("")
+  staying     String                  @default("")
+  createdAt   DateTime                @default(now())
+  ipaddress   String                  @default("")
+  browser     String                  @default("")
+  city        String                  @default("")
+  country     String                  @default("")
+  device      String                  @default("")
+  latitude    String                  @default("")
+  longitude   String                  @default("")
+  os          String                  @default("")
+  region      String                  @default("")
+  zipcode     String                  @default("")
+  devicemodel String                  @default("")
+}
+
+model Viptourspreferenceformorlando {
+  id                  String   @id @default(uuid())
+  firstname           String   @default("")
+  lastname            String   @default("")
+  email               String   @default("")
+  icode               String   @default("")
+  phonenumber         String   @default("")
+  buzzlightyear       String   @default("")
+  spacemountain       String   @default("")
+  tomorrowland        String   @default("")
+  dumbo               String   @default("")
+  barnstormer         String   @default("")
+  littlemermaid       String   @default("")
+  sevendwarfs         String   @default("")
+  winnie              String   @default("")
+  meetcinderella      String   @default("")
+  philarmagic         String   @default("")
+  peterpan            String   @default("")
+  smallworld          String   @default("")
+  hauntedmansion      String   @default("")
+  splashmountain      String   @default("")
+  thundermountain     String   @default("")
+  pirates             String   @default("")
+  aladdin             String   @default("")
+  tron                String   @default("")
+  spaceshipearth      String   @default("")
+  guardians           String   @default("")
+  soarin              String   @default("")
+  seasnemofriends     String   @default("")
+  imagination         String   @default("")
+  missionspace        String   @default("")
+  testtrack           String   @default("")
+  remys               String   @default("")
+  frozen              String   @default("")
+  safari              String   @default("")
+  expeditioneverest   String   @default("")
+  kaliriver           String   @default("")
+  dinosaur            String   @default("")
+  findingnemo         String   @default("")
+  flightofpassage     String   @default("")
+  naviriver           String   @default("")
+  mickeyrunaway       String   @default("")
+  towerofterror       String   @default("")
+  startours           String   @default("")
+  toystorymania       String   @default("")
+  aliensaucerspin     String   @default("")
+  slinkydog           String   @default("")
+  riseofresistance    String   @default("")
+  milleniumfalcon     String   @default("")
+  muppet              String   @default("")
+  rockinrollercoaster String   @default("")
+  frozenshow          String   @default("")
+  beautyandthebeast   String   @default("")
+  lighteningmcqueen   String   @default("")
+  idianjones          String   @default("")
+  lionking            String   @default("")
+  toughtobeabug       String   @default("")
+  createdAt           DateTime @default(now())
+}
+
+model Virtualvip {
+  id        String            @id @default(uuid())
+  createdAt DateTime          @default(now())
+  email     String            @default("")
+  phone     String            @default("")
+  message   String            @default("") @db.VarChar(1000)
+  status    Virtualvip_status @default(NOT_CONTACTED)
+  daterange String            @default("")
+  firstname String            @default("")
+  guide     String            @default("")
+  icode     String            @default("")
+  lastname  String            @default("")
+  staying   String            @default("")
+  ipaddress String            @default("")
+}
+
+model Virtualvipnote {
+  id        String   @id @default(uuid())
+  content   String   @db.VarChar(1000)
+  createdAt DateTime @default(now())
+  leadId    String
+
+  @@index([leadId])
+}
+
+model WirelessDesignPros {
+  id        String                    @id @default(uuid())
+  createdAt DateTime                  @default(now())
+  name      String                    @default("")
+  email     String                    @default("")
+  phone     String                    @default("")
+  company   String                    @default("")
+  message   String                    @default("") @db.VarChar(1000)
+  status    WirelessDesignPros_status @default(NOT_CONTACTED)
+}
+
+model WirelessDesignProsLeadMagnet {
+  id        String                              @id @default(uuid())
+  createdAt DateTime                            @default(now())
+  name      String                              @default("")
+  email     String                              @default("")
+  company   String                              @default("")
+  pdfname   String                              @default("")
+  status    WirelessDesignProsLeadMagnet_status @default(NOT_CONTACTED)
+  campaign  String                              @default("")
+}
+
+model WirelessDesignProsNote {
+  id        String   @id @default(uuid())
+  content   String   @db.VarChar(1000)
+  createdAt DateTime @default(now())
+  leadId    String
+
+  @@index([leadId])
+}
+
+model viptourspreferenceformcali {
+  id                                      String   @id @default(uuid())
+  firstname                               String   @default("")
+  lastname                                String   @default("")
+  email                                   String   @default("")
+  icode                                   String   @default("")
+  phonenumber                             String   @default("")
+  aliceInWonderland                       String   @default("")
+  autopia                                 String   @default("")
+  bigThunderMountainRailroad              String   @default("")
+  buzzLightyearAstroBlasters              String   @default("")
+  caseyJrCircusTrain                      String   @default("")
+  chipNDalesGadgetCoaster                 String   @default("")
+  disneylandRailroad                      String   @default("")
+  dumboTheFlyingElephant                  String   @default("")
+  findingNemoSubmarineVoyage              String   @default("")
+  goofysSkySchool                         String   @default("")
+  grizzlyRiverRun                         String   @default("")
+  guardiansOfTheGalaxyMissionBREAKOUT     String   @default("")
+  guardiansOfTheGalaxyMonstersAfterDark   String   @default("")
+  hauntedMansion                          String   @default("")
+  incredicoaster                          String   @default("")
+  indianaJonesAdventure                   String   @default("")
+  itsASmallWorld                          String   @default("")
+  jessiesCritterCarousel                  String   @default("")
+  jumpinJellyfish                         String   @default("")
+  jungleCruise                            String   @default("")
+  kingArthurCarousel                      String   @default("")
+  luigisHonkinHaulOWeen                   String   @default("")
+  luigisJoyToTheWhirl                     String   @default("")
+  madTeaParty                             String   @default("")
+  mainStreetVehicles                      String   @default("")
+  markTwainRiverboat                      String   @default("")
+  matterhornBobsleds                      String   @default("")
+  mickeyAndMinniesRunawayRailway          String   @default("")
+  millenniumFalconSmugglersRun            String   @default("")
+  monstersIncMikeAndSulleyToTheRescue     String   @default("")
+  mrToadsWildRide                         String   @default("")
+  peterPansFlight                         String   @default("")
+  piratesOfTheCaribbean                   String   @default("")
+  pixarPalARoundNonSwinging               String   @default("")
+  pixarPalARoundSwinging                  String   @default("")
+  radiatorSpringsRacers                   String   @default("")
+  redCarTrolley                           String   @default("")
+  rogerRabbitsCarToonSpin                 String   @default("")
+  sailingShipColumbia                     String   @default("")
+  snowWhitesEnchantedWish                 String   @default("")
+  soarinAroundTheWorld                    String   @default("")
+  soarinOverCalifornia                    String   @default("")
+  spaceMountain                           String   @default("")
+  starToursTheAdventuresContinue          String   @default("")
+  starWarsRiseOfTheResistance             String   @default("")
+  storybookLandCanalBoats                 String   @default("")
+  tarzansTreehouse                        String   @default("")
+  theLittleMermaidArielsUnderseaAdventure String   @default("")
+  waltDisneysEnchantedTikiRoom            String   @default("")
+  createdAt                               DateTime @default(now())
+}
+
+model ConsultationRequest {
+  id            String   @id @default(uuid())
+  name          String @default("")
+  email         String @default("")
+  phone         String @default("")
+  preferredDate DateTime?
+  address       String @default("")
+  service       String @default("")
+  message       String @default("")
+  createdAt     DateTime @default(now())
+}
+
+enum Privatevip_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+}
+
+enum Virtualvip_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+}
+
+enum LupoLawnService_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+}
+
+enum Paratec_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+}
+
+enum WirelessDesignProsLeadMagnet_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+}
+
+enum BotViptourscontacts_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+  FOLLOW_UP
+}
+
+enum Viptourscontacts_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+  FOLLOW_UP
+}
+
+enum WirelessDesignPros_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+}
+
+enum BlackCatContacts_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+  FOLLOW_UP
+}
+
+enum FerraroForever_status {
+  NOT_CONTACTED
+  CONTACTED
+  RESPONDED
+  BOOKED
+  CLOSED
+  NOT_INTERESTED
+}
