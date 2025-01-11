@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 
-import lawgirl from "@/images/lawgirl.png";
-import office2 from "@/images/office2.jpg";
+import office2 from "@/images/team.jpg";
+import employmentlaw from "@/images/employment-law-recruitment.jpg";
 
 export default function WhoWeAre() {
   return (
@@ -20,10 +20,7 @@ export default function WhoWeAre() {
               <p className="mb-6 text-base text-gray-700 dark:text-gray-300 md:text-lg">
                 With over a decade of experience, our legal recruitment platform
                 has been connecting top law firms with exceptional legal talent
-                across all specializations. Our team of recruitment specialists
-                is dedicated to delivering excellence in every placement,
-                ensuring your firm finds the perfect match for its needs and
-                culture.
+                across all specializations.
               </p>
             </div>
             <div className="col-span-1 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
@@ -47,7 +44,7 @@ export default function WhoWeAre() {
           </div>
           <div className="col-span-1 h-64 overflow-hidden rounded-lg lg:h-full lg:mt-10">
             <Image
-              src={office2}
+              src={employmentlaw}
               alt="Legal recruitment experts at work"
               layout="responsive"
               width={600}

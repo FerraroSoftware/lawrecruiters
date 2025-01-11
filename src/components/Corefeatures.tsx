@@ -10,7 +10,7 @@ const features = [
     title: "AI-Powered Candidate Matching",
     description:
       "Our advanced algorithm analyzes countless data points to match the perfect candidates with your firm's unique needs and culture. Save time and resources by focusing only on the most qualified applicants.",
-    image: law1,
+    image: law2,
     alt: "AI-powered candidate matching illustration",
     cta1: "Try AI Matching",
     cta2: "Learn More",
@@ -19,7 +19,7 @@ const features = [
     title: "Comprehensive Talent Pool",
     description:
       "Access a vast network of pre-vetted legal professionals across all specializations and experience levels. From recent law school graduates to seasoned partners, find the right talent to grow your firm.",
-    image: law2,
+    image: law1,
     alt: "Diverse legal professionals illustration",
     cta1: "Browse Candidates",
     cta2: "See Specializations",

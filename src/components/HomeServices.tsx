@@ -14,7 +14,7 @@ import {
 import corporatelaw from "@/images/corporate-law-recruitment.jpg";
 import litigation from "@/images/litigation-law-recruitment.jpg";
 import intellectualproperty from "@/images/intellectual-property-recruitment.jpg";
-import employmentlaw from "@/images/employment-law-recruitment.jpg";
+import employmentlaw from "@/images/team.jpg";
 import internationallaw from "@/images/international-law-recruitment.jpg";
 import compliancelaw from "@/images/compliance-law-recruitment.jpg";
 
