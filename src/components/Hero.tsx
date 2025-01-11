@@ -20,7 +20,7 @@ export default function Hero() {
                     className="h-5 w-5 fill-orange-400 text-orange-400"
                   />
                 ))}
-                <span className="ml-2 text-lg font-medium">4.7 (3,350)</span>
+                <span className="ml-2 text-lg font-medium">4.9 (3,350)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Flag className="h-5 w-5 text-[#012169]" />
