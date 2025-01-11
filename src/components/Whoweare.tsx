@@ -25,7 +25,7 @@ export default function WhoWeAre() {
             </div>
             <div className="col-span-1 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
               <BenefitItem
-                title="AI-Powered Matching"
+                title="Law Firm Recruitment"
                 description="Our advanced algorithms ensure precise candidate-firm matches based on skills, experience, and cultural fit."
               />
               <BenefitItem

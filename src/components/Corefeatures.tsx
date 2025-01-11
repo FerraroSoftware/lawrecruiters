@@ -16,7 +16,7 @@ const features = [
     cta2: "Learn More",
   },
   {
-    title: "Comprehensive Talent Pool",
+    title: "The Best Legal Talent",
     description:
       "Access a vast network of pre-vetted legal professionals across all specializations and experience levels. From recent law school graduates to seasoned partners, find the right talent to grow your firm.",
     image: law1,
@@ -25,7 +25,7 @@ const features = [
     cta2: "See Specializations",
   },
   {
-    title: "Streamlined Hiring Process",
+    title: "Legal Placement Services",
     description:
       "Simplify your recruitment workflow with our intuitive platform. From posting job listings to scheduling interviews and making offers, our tools help you manage the entire hiring process efficiently and effectively.",
     image: law3,
