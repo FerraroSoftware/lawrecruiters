@@ -24,16 +24,16 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <Flag className="h-5 w-5 text-[#012169]" />
-                <p className="text-sm font-semibold tracking-wide text-[#012169]">
-                  THE #1 LEGAL RECRUITMENT PLATFORM
-                </p>
+                <h1 className="text-sm font-semibold tracking-wide text-[#012169]">
+                  THE #1 LEGAL RECRUITER COMPANY
+                </h1>
               </div>
             </div>
 
             {/* Heading */}
-            <h1 className="text-3xl font-bold tracking-tight text-[#0A2756] sm:text-4xl lg:text-5xl xl:text-6xl">
+            <h2 className="text-3xl font-bold tracking-tight text-[#0A2756] sm:text-4xl lg:text-5xl xl:text-6xl">
               Connect with top legal talent your firm needs.
-            </h1>
+            </h2>
 
             {/* Description */}
             <p className="text-lg text-gray-600 sm:text-xl">

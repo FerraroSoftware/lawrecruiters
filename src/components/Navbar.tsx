@@ -119,28 +119,40 @@ export default function LegalNavbar() {
                     aria-labelledby="options-menu"
                   >
                     <Link
-                      href="/services/attorney-placement"
+                      href="/services/legal-staff"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3366CC]"
                     >
-                      Attorney Placement
+                      Attorney Recruiting
                     </Link>
                     <Link
                       href="/services/in-house-counsel"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3366CC]"
                     >
-                      In-House Counsel
-                    </Link>
-                    <Link
-                      href="/services/legal-staff"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3366CC]"
-                    >
-                      Legal Staff
+                      Executive Recruiting
                     </Link>
                     <Link
                       href="/services/executive-search"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3366CC]"
                     >
-                      Executive Search
+                      Law Firm Recruiting
+                    </Link>
+                    <Link
+                      href="/services/executive-search"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3366CC]"
+                    >
+                      Legal Hiring
+                    </Link>
+                    <Link
+                      href="/services/executive-search"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3366CC]"
+                    >
+                      Legal Placement
+                    </Link>
+                    <Link
+                      href="/services/attorney-placement"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#3366CC]"
+                    >
+                      Legal Staffing
                     </Link>
                   </div>
                 </div>
